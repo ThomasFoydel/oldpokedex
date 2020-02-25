@@ -7,13 +7,13 @@ export default function IndividualPokemon({ pokemon }) {
   console.log('poke: ', pokemon);
   return (
     <div className='pokemon-card'>
-      {/* blah blah blah */}
-      <h1>{name}</h1>
-      <p>{number}</p>
+      <h1 className='pokemon-card-name'>{name}</h1>
       <img
         className='pokemon-card-image'
         src={`imgs/sprites/${pokemonIndex}.png`}
       />
+      <br />
+      <button>details</button>
     </div>
   );
 }
