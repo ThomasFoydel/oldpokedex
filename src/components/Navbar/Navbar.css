@@ -1,0 +1,15 @@
+.navbar {
+  max-height: 4rem;
+  background: rgb(16, 16, 16);
+  color: rgb(240, 240, 240);
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  text-align: center;
+}
+
+.navbar-item {
+  margin-top: 0.5rem;
+  letter-spacing: 1rem;
+  margin-left: 1rem;
+}

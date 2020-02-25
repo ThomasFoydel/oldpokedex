@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import PokemonList from 'components/PokemonList/PokemonList';
 import { gql } from 'apollo-boost';
-import './App.css';
 import ApolloClient from 'apollo-boost';
+
+import PokemonList from 'components/PokemonList/PokemonList';
+import Navbar from 'components/Navbar/Navbar';
+
+import './App.css';
 
 function App() {
   const [pokemonList, setPokemonList] = useState(null);
@@ -30,9 +33,10 @@ function App() {
   }, []);
 
   return (
-    <div className='App'>
+    <>
+      <Navbar />
       {pokemonList && <PokemonList pokemonList={pokemonList} />}
-    </div>
+    </>
   );
 }
 
