@@ -1,24 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import PokemonList from 'components/PokemonList/PokemonList';
+import { gql } from 'apollo-boost';
 import './App.css';
+import ApolloClient from 'apollo-boost';
 
 function App() {
+  const [pokemonList, setPokemonList] = useState(null);
+
+  useEffect(() => {
+    const client = new ApolloClient({
+      uri: 'https://graphql-pokemon.now.sh/'
+    });
+
+    client
+      .query({
+        query: gql`
+          {
+            pokemons(first: 151) {
+              name
+              id
+              number
+            }
+          }
+        `
+      })
+      .then(result => {
+        setPokemonList(result.data.pokemons);
+      });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      {pokemonList && <PokemonList pokemonList={pokemonList} />}
     </div>
   );
 }
