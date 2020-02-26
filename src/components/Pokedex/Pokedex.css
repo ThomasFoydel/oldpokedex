@@ -1,0 +1,8 @@
+.pokedex {
+  background: red;
+  position: fixed;
+  right: 0;
+  top: 2rem;
+  height: 20rem;
+  width: 20rem;
+}

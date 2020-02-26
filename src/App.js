@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { gql } from 'apollo-boost';
-import ApolloClient from 'apollo-boost';
+import ApolloClient, { gql } from 'apollo-boost';
 
 import PokemonList from 'components/PokemonList/PokemonList';
+import Pokedex from 'components/Pokedex/Pokedex';
 import Navbar from 'components/Navbar/Navbar';
 
 import './App.css';
 
 function App() {
   const [pokemonList, setPokemonList] = useState(null);
+  const [currentPokedexPokemon, setCurrentPokedexPokemon] = useState(null);
 
   useEffect(() => {
     const client = new ApolloClient({
@@ -35,7 +36,18 @@ function App() {
   return (
     <>
       <Navbar />
-      {pokemonList && <PokemonList pokemonList={pokemonList} />}
+      {currentPokedexPokemon && (
+        <Pokedex
+          pokemon={currentPokedexPokemon}
+          setCurrent={setCurrentPokedexPokemon}
+        />
+      )}
+      {pokemonList && (
+        <PokemonList
+          pokemonList={pokemonList}
+          setCurrent={setCurrentPokedexPokemon}
+        />
+      )}
     </>
   );
 }

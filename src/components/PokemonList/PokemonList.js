@@ -1,7 +1,7 @@
 import React from 'react';
 import IndividualPokemon from 'components/IndividualPokemon/IndividualPokemon';
 
-export default function PokemonList({ pokemonList }) {
+export default function PokemonList({ pokemonList, setCurrent }) {
   return (
     <div className='pokemon-list-container'>
       <div className='pokemon-list'>
@@ -11,6 +11,7 @@ export default function PokemonList({ pokemonList }) {
               key={pokemon.number}
               pokemon={pokemon}
               style={{ background: 'blue' }}
+              setCurrent={setCurrent}
             />
           ))}
       </div>

@@ -1,10 +1,12 @@
 import React from 'react';
 
 import './IndividualPokemon.css';
-export default function IndividualPokemon({ pokemon }) {
-  const { name, number } = pokemon;
+export default function IndividualPokemon({ pokemon, setCurrent }) {
+  const { name, number, id } = pokemon;
   const pokemonIndex = Number(number);
-  console.log('poke: ', pokemon);
+  const handleSelect = () => {
+    setCurrent(id);
+  };
   return (
     <div className='pokemon-card'>
       <h1 className='pokemon-card-name'>{name}</h1>
@@ -13,7 +15,7 @@ export default function IndividualPokemon({ pokemon }) {
         src={`imgs/sprites/${pokemonIndex}.png`}
       />
       <br />
-      <button>details</button>
+      <button onClick={handleSelect}>details</button>
     </div>
   );
 }
