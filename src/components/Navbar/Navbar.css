@@ -1,5 +1,6 @@
 .navbar {
-  max-height: 4rem;
+  /* max-height: 4rem; */
+  height: 6rem;
   background: rgb(16, 16, 16);
   color: rgb(240, 240, 240);
   position: fixed;

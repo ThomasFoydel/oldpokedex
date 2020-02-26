@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { CTX } from 'context/Store';
 
+import './Pokedex.scss';
+
 export default function Pokedex({ pokemon }) {
   const [appState, updateState] = useContext(CTX);
 
@@ -23,11 +25,20 @@ export default function Pokedex({ pokemon }) {
 
   return (
     <div>
-      <button onClick={() => updateState({ type: 'CLEAR_CURRENT_POKEMON' })} />
-      <h1>{name}</h1>
-      <p>{classification}</p>
-      <div>
-        types:
+      <i
+        class='fas fa-2x fa-times pokedex-close-button'
+        onClick={() => updateState({ type: 'CLEAR_CURRENT_POKEMON' })}
+      ></i>
+
+      <h1 className='pokedex-name'>{name}</h1>
+      <img
+        alt={`${name} sprite`}
+        className='pokedex-sprite'
+        src={`/imgs/sprites/${Number(number)}.png`}
+      />
+      <p className='pokedex-classification'>{classification}</p>
+      <div className='pokedex-types'>
+        types:{' '}
         {types.map(type => (
           <span key={type}>{type}</span>
         ))}
@@ -71,24 +82,29 @@ export default function Pokedex({ pokemon }) {
       <p>max CP: {maxCP}</p>
       <p>flee rate: {fleeRate}</p>
 
-      <h6>
+      <p>
         weight: {weight.minimum} - {weight.maximum}
-      </h6>
-      <h6>
+      </p>
+      <p>
         height: {height.minimum} - {height.maximum}
-      </h6>
+      </p>
 
-      <h6>
-        {evolutionRequirements.amount} {evolutionRequirements.name}
-      </h6>
+      {evolutionRequirements && (
+        <p>
+          {evolutionRequirements.amount} {evolutionRequirements.name}
+        </p>
+      )}
 
-      <img src={`/imgs/sprites/${Number(number)}.png`} />
       <div className='pokedex-evolutions'>
         {evolutions &&
           evolutions.map(evolution => (
             <div key={evolution.number} className='pokedex-evolution'>
               <p>{evolution.name}</p>
-              <img src={`/imgs/sprites/${Number(evolution.number)}.png`} />
+              <img
+                alt={`${evolution.name} sprite`}
+                className='pokedex-evolution-sprite'
+                src={`/imgs/sprites/${Number(evolution.number)}.png`}
+              />
             </div>
           ))}
       </div>

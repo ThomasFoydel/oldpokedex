@@ -2,8 +2,6 @@ import React, { useState, useEffect, useContext } from 'react';
 import ApolloClient, { gql } from 'apollo-boost';
 import Pokedex from 'components/Pokedex/Pokedex';
 
-import './Pokedex.css';
-
 import { CTX } from 'context/Store';
 
 export default function PokedexContainer() {

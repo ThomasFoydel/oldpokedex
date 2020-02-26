@@ -5,7 +5,7 @@ import PokemonList from 'components/PokemonList/PokemonList';
 import PokedexContainer from 'components/Pokedex/PokedexContainer';
 import Navbar from 'components/Navbar/Navbar';
 
-import './App.css';
+import './App.scss';
 
 import { CTX } from 'context/Store';
 
