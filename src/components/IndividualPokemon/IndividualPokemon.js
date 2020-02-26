@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { CTX } from 'context/Store';
 
 import './IndividualPokemon.css';
-export default function IndividualPokemon({ pokemon, setCurrent }) {
+export default function IndividualPokemon({ pokemon }) {
+  const [appState, updateState] = useContext(CTX);
   const { name, number, id } = pokemon;
   const pokemonIndex = Number(number);
-  const handleSelect = () => {
-    setCurrent(id);
-  };
+
   return (
     <div className='pokemon-card'>
       <h1 className='pokemon-card-name'>{name}</h1>
@@ -15,7 +15,16 @@ export default function IndividualPokemon({ pokemon, setCurrent }) {
         src={`imgs/sprites/${pokemonIndex}.png`}
       />
       <br />
-      <button onClick={handleSelect}>details</button>
+      <button
+        onClick={() =>
+          updateState({
+            type: 'CHANGE_CURRENT_POKEMON',
+            payload: { currentPokemon: id }
+          })
+        }
+      >
+        details
+      </button>
     </div>
   );
 }

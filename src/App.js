@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import ApolloClient, { gql } from 'apollo-boost';
 
 import PokemonList from 'components/PokemonList/PokemonList';
@@ -7,9 +7,12 @@ import Navbar from 'components/Navbar/Navbar';
 
 import './App.css';
 
+import { CTX } from 'context/Store';
+
 function App() {
   const [pokemonList, setPokemonList] = useState(null);
   const [currentPokedexPokemon, setCurrentPokedexPokemon] = useState(null);
+  const [appState, updateState] = useContext(CTX);
 
   useEffect(() => {
     const client = new ApolloClient({
@@ -36,18 +39,8 @@ function App() {
   return (
     <>
       <Navbar />
-      {currentPokedexPokemon && (
-        <Pokedex
-          pokemon={currentPokedexPokemon}
-          setCurrent={setCurrentPokedexPokemon}
-        />
-      )}
-      {pokemonList && (
-        <PokemonList
-          pokemonList={pokemonList}
-          setCurrent={setCurrentPokedexPokemon}
-        />
-      )}
+      {appState.currentPokemon && <Pokedex />}
+      {pokemonList && <PokemonList pokemonList={pokemonList} />}
     </>
   );
 }
