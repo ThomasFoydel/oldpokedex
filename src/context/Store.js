@@ -5,13 +5,16 @@ const CTX = React.createContext();
 export { CTX };
 
 export function reducer(state, action) {
-  const { currentPokemon } = action.payload;
-
   switch (action.type) {
     case 'CHANGE_CURRENT_POKEMON':
       return {
         ...state,
-        currentPokemon
+        currentPokemon: action.payload.currentPokemon
+      };
+    case 'CLEAR_CURRENT_POKEMON':
+      return {
+        ...state,
+        currentPokemon: ''
       };
     default:
       throw Error('reducer error');

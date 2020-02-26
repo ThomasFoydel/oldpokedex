@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import ApolloClient, { gql } from 'apollo-boost';
 
 import PokemonList from 'components/PokemonList/PokemonList';
-import Pokedex from 'components/Pokedex/Pokedex';
+import PokedexContainer from 'components/Pokedex/PokedexContainer';
 import Navbar from 'components/Navbar/Navbar';
 
 import './App.css';
@@ -11,8 +11,7 @@ import { CTX } from 'context/Store';
 
 function App() {
   const [pokemonList, setPokemonList] = useState(null);
-  const [currentPokedexPokemon, setCurrentPokedexPokemon] = useState(null);
-  const [appState, updateState] = useContext(CTX);
+  const [appState] = useContext(CTX);
 
   useEffect(() => {
     const client = new ApolloClient({
@@ -39,7 +38,7 @@ function App() {
   return (
     <>
       <Navbar />
-      {appState.currentPokemon && <Pokedex />}
+      {appState.currentPokemon && <PokedexContainer />}
       {pokemonList && <PokemonList pokemonList={pokemonList} />}
     </>
   );

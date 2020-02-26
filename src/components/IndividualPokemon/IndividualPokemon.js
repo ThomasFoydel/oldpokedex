@@ -13,6 +13,7 @@ export default function IndividualPokemon({ pokemon }) {
       <img
         className='pokemon-card-image'
         src={`imgs/sprites/${pokemonIndex}.png`}
+        alt={`${name} sprite`}
       />
       <br />
       <button

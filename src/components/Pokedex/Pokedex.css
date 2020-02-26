@@ -2,7 +2,16 @@
   background: red;
   position: fixed;
   right: 0;
-  top: 2rem;
-  height: 20rem;
-  width: 20rem;
+  top: 5rem;
+  max-width: 100vw;
+  height: 38rem;
+  width: 33rem;
+}
+
+.pokedex-evolutions {
+  display: flex;
+}
+
+.pokedex-evolution {
+  display: flex;
 }
