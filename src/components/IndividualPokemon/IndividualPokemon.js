@@ -20,7 +20,10 @@ export default function IndividualPokemon({ pokemon }) {
         onClick={() =>
           updateState({
             type: 'CHANGE_CURRENT_POKEMON',
-            payload: { currentPokemon: id }
+            payload: {
+              currentPokemonLongId: id,
+              currentPokemonNumber: Number(number)
+            }
           })
         }
       >
