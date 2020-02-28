@@ -15,14 +15,17 @@
 
 .pokedex-prevnext-buttons {
   position: absolute;
-  // margin-left: 50%;
-  // transform: translateX(-50%);
   left: 1rem;
   bottom: 1rem;
 }
 
 .pokedex-prevnext-button {
   padding: 0.3rem 1rem;
+  cursor: pointer;
+  &:hover {
+    background: #444;
+    color: white;
+  }
 }
 
 .pokedex-close-button {

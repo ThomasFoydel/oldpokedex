@@ -22,6 +22,7 @@ body {
 
 html {
   font-size: 62.5%;
+  background: #222;
 }
 
 body {
@@ -30,7 +31,6 @@ body {
   font-size: 14px;
   line-height: 1.7;
   box-sizing: border-box;
-  background: rgba(245, 245, 245, 0);
 }
 
 button:focus,
@@ -53,5 +53,5 @@ a {
 .pokeball-loader {
   margin-left: 50%;
   transform: translateX(-50%);
-  background: #222;
+  margin-top: -15%;
 }
