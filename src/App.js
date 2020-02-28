@@ -10,8 +10,9 @@ import './App.scss';
 import { CTX } from 'context/Store';
 
 function App() {
-  const [pokemonList, setPokemonList] = useState(null);
   const [appState] = useContext(CTX);
+  const [pokemonList, setPokemonList] = useState(null);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     const client = new ApolloClient({
@@ -32,16 +33,23 @@ function App() {
       })
       .then(result => {
         setPokemonList(result.data.pokemons);
+        setLoaded(true);
       });
   }, []);
 
   return (
     <>
-      <Navbar />
-      {appState.currentPokemonLongId && (
-        <PokedexContainer pokemonList={pokemonList} />
+      {loaded ? (
+        <>
+          <Navbar />
+          {appState.currentPokemonLongId && (
+            <PokedexContainer pokemonList={pokemonList} />
+          )}
+          {pokemonList && <PokemonList pokemonList={pokemonList} />}
+        </>
+      ) : (
+        <img className='pokeball-loader' src={'imgs/loading/pokeball.gif'} />
       )}
-      {pokemonList && <PokemonList pokemonList={pokemonList} />}
     </>
   );
 }

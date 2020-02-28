@@ -56,3 +56,12 @@
   height: 13rem;
   background: rgba(255, 0, 0, 0.399);
 }
+
+.pokemon-card-detailsbutton {
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+  &:hover {
+    background: #444;
+    color: white;
+  }
+}

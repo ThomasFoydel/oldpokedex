@@ -49,3 +49,9 @@ a {
 .flex {
   display: flex;
 }
+
+.pokeball-loader {
+  margin-left: 50%;
+  transform: translateX(-50%);
+  background: #222;
+}

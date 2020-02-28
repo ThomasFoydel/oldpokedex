@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { CTX } from 'context/Store';
 
-import './IndividualPokemon.css';
+import './IndividualPokemon.scss';
 export default function IndividualPokemon({ pokemon }) {
   const [appState, updateState] = useContext(CTX);
   const { name, number, id } = pokemon;
@@ -17,6 +17,7 @@ export default function IndividualPokemon({ pokemon }) {
       />
       <br />
       <button
+        className='pokemon-card-detailsbutton'
         onClick={() =>
           updateState({
             type: 'CHANGE_CURRENT_POKEMON',
