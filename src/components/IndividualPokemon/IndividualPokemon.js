@@ -21,8 +21,7 @@ export default function IndividualPokemon({ pokemon }) {
           updateState({
             type: 'CHANGE_CURRENT_POKEMON',
             payload: {
-              currentPokemonLongId: id,
-              currentPokemonNumber: Number(number)
+              currentPokemonLongId: id
             }
           })
         }

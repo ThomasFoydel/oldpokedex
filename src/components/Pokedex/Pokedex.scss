@@ -9,8 +9,12 @@
   width: 45rem;
   overflow: hidden;
   border-radius: 2px;
-  box-shadow: 2rem 2rem 2rem rgba(0, 0, 0, 0.5),
-    -2rem -2rem 2rem rgba(255, 255, 255, 0.2);
+  box-shadow: 2rem 2rem 2rem rgba(0, 0, 0, 0.45),
+    -2rem -2rem 2rem rgba(255, 255, 255, 0.15);
+}
+
+.pokedex-prevnext-buttons {
+  position: absolute;
 }
 
 .pokedex-close-button {

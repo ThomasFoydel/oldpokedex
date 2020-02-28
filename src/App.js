@@ -38,8 +38,8 @@ function App() {
   return (
     <>
       <Navbar />
-      {appState.currentPokemonLongId && appState.currentPokemonNumber && (
-        <PokedexContainer />
+      {appState.currentPokemonLongId && (
+        <PokedexContainer pokemonList={pokemonList} />
       )}
       {pokemonList && <PokemonList pokemonList={pokemonList} />}
     </>

@@ -9,14 +9,12 @@ export function reducer(state, action) {
     case 'CHANGE_CURRENT_POKEMON':
       return {
         ...state,
-        currentPokemonLongId: action.payload.currentPokemonLongId,
-        currentPokemonNumber: action.payload.currentPokemonNumber
+        currentPokemonLongId: action.payload.currentPokemonLongId
       };
     case 'CLEAR_CURRENT_POKEMON':
       return {
         ...state,
-        currentPokemonLongId: '',
-        currentPokemonNumber: ''
+        currentPokemonLongId: ''
       };
     default:
       throw Error('reducer error');
