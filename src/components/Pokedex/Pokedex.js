@@ -1,6 +1,10 @@
-import React, { useContext } from 'react';
-import { CTX } from 'context/Store';
+import React, { useContext, useEffect } from 'react';
+import { useSpring, useTransition, animated } from 'react-spring';
+import PokemonSprite from 'components/Pokedex/PokemonSprite';
 
+import * as imgs from 'imgs/sprites';
+
+import { CTX } from 'context/Store';
 import './Pokedex.scss';
 
 export default function Pokedex({ pokemonData, pokemonList }) {
@@ -27,6 +31,12 @@ export default function Pokedex({ pokemonData, pokemonList }) {
   const prevPokemon = i > 1 && pokemonList[i - 2].id;
   const nextPokemon = i < pokemonList.length && pokemonList[i].id;
 
+  const animationProps = useSpring({
+    to: { opacity: 1 },
+    from: { opacity: 0 }
+  });
+
+  console.log('imgs: ', imgs);
   return (
     <div className='pokedex'>
       <div className='pokedex-prevnext-buttons'>
@@ -66,11 +76,14 @@ export default function Pokedex({ pokemonData, pokemonList }) {
         onClick={() => updateState({ type: 'CLEAR_CURRENT_POKEMON' })}
       ></i>
       <h1 className='pokedex-name'>{name}</h1>
-      <img
-        alt={`${name} sprite`}
-        className='pokedex-sprite'
-        src={`/imgs/sprites/${Number(number)}.png`}
-      />
+      {/* <PokemonSprite pokemonNumber={Number(number)} name={name} /> */}
+      <animated.div style={animationProps}>
+        <img
+          alt={`${name} sprite`}
+          className='pokedex-sprite'
+          src={`/imgs/sprites/${Number(number)}.png`}
+        />
+      </animated.div>
       <p className='pokedex-classification'>{classification}</p>
       <div className='pokedex-infobox'>
         <div className='pokedex-types'>

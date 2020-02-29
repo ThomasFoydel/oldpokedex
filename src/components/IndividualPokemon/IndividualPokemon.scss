@@ -36,11 +36,20 @@
   padding: 1rem;
 }
 .pokemon-card {
-  background-color: dodgerblue;
+  // background-color: #1e90ff;
+  background: linear-gradient(
+    135deg,
+    rgb(71, 169, 255) 0%,
+    rgba(33, 134, 255, 1) 48%,
+    rgb(130, 68, 255) 100%
+  );
+  border: 2px solid rgb(7, 67, 128);
   color: white;
   height: 20rem;
   text-align: center;
   width: 100%;
+  box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.3),
+    -0.5rem -0.5rem 0.5rem rgba(255, 255, 255, 0.2);
 }
 
 .pokemon-card-name {
@@ -59,6 +68,7 @@
 
 .pokemon-card-detailsbutton {
   padding: 0.3rem 0.7rem;
+  transform: translateY(-0.4rem);
   cursor: pointer;
   &:hover {
     background: #444;
