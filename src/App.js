@@ -4,7 +4,7 @@ import { useSpring, animated, config } from 'react-spring';
 import PokemonList from 'components/PokemonList/PokemonList';
 import PokedexContainer from 'components/Pokedex/PokedexContainer';
 import Navbar from 'components/Navbar/Navbar';
-
+import loadingPokeball from 'imgs/loading/pokeball.gif';
 import './App.scss';
 
 import { CTX } from 'context/Store';
@@ -59,7 +59,7 @@ function App() {
           </animated.div>
         </>
       ) : (
-        <img className='pokeball-loader' src={'imgs/loading/pokeball.gif'} />
+        <img className='pokeball-loader' src={loadingPokeball} />
       )}
     </>
   );
