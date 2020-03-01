@@ -6,7 +6,7 @@
   transform: translateX(-50%);
   top: 9rem;
   max-width: 100vw;
-  height: 62rem;
+  height: 62.5rem;
   width: 46rem;
   padding: 0.5rem;
   overflow: hidden;
@@ -49,26 +49,32 @@
 }
 
 .pokedex-name {
-  font-size: 3rem;
+  font-size: 3.7rem;
   text-align: center;
   margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  letter-spacing: 0.3rem;
+  margin-bottom: 0rem;
+  letter-spacing: 0.7rem;
+  margin-left: 0.7rem;
   cursor: default;
+  color: rgb(43, 43, 43);
 }
 
 .pokedex-spritebackground {
-  height: 21rem;
+  height: 22rem;
   margin-left: 50%;
   transform: translateX(-50%);
   background: rgba(28, 73, 255, 0.461);
   width: 82%;
+  margin-bottom: -2rem;
 }
 
 .pokedex-classification {
   text-align: center;
   cursor: default;
   font-size: 1.5rem;
+  color: rgb(245, 245, 245);
+  margin-top: 2rem;
+  font-weight: bold;
 }
 
 .pokedex-infobox {
@@ -90,7 +96,7 @@
 
 .pokedex-evolution {
   cursor: pointer;
-  // margin: 0 2rem;
+  width: 8.5rem;
   padding: 0 2rem;
   &:hover {
     background: rgba(255, 255, 255, 0.276);
@@ -98,9 +104,13 @@
 }
 
 .pokedex-evolution-name {
-  height: 1.5rem;
+  height: 1.3rem;
+  font-size: 1rem;
   text-align: center;
   font-weight: bold;
+  margin-left: 50%;
+  width: 160%;
+  transform: translateX(-50%);
 }
 
 .pokedex-evolution-sprite {
@@ -114,8 +124,8 @@
 }
 
 .pokedex-finalevolution {
-  margin-top: 3rem;
-  margin-right: 3rem;
+  margin-top: 2.4rem;
+  margin-right: 4rem;
   font-weight: bold;
 }
 

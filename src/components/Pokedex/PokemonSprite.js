@@ -9,17 +9,17 @@ const slides = spritesArray.map((sprite, i) => {
 const PokemonSprite = ({ name, pokemonNumber }) => {
   const [index, setIndex] = useState(0);
   const transitions = useTransition(slides[index], item => item.id, {
-    from: { position: 'absolute', opacity: 0, left: 500 },
+    from: { position: 'absolute', opacity: 0, left: 250 },
     enter: { opacity: 1, left: 0 },
-    leave: { opacity: 0, left: -500 },
-    config: config.molasses
+    leave: { opacity: 0, left: -250 },
+    delay: 100,
+    config: config.wobbly
   });
   useEffect(() => {
     setIndex(pokemonNumber);
   }, [pokemonNumber]);
 
   return transitions.map(({ item, props, key }) => {
-    // console.log('ITEM: ', item);
     return (
       <animated.div
         key={key}

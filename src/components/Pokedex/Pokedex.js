@@ -1,5 +1,4 @@
-import React, { useContext, useEffect } from 'react';
-// import { useSpring, useTransition, animated } from 'react-spring';
+import React, { useContext } from 'react';
 import PokemonSprite from 'components/Pokedex/PokemonSprite';
 import spritesArray from '../../imgs/sprites/index';
 
@@ -127,10 +126,10 @@ export default function Pokedex({ pokemonData, pokemonList }) {
           ))}
         </div>
 
-        {/* <div className='flex'> */}
         <p>Max HP: {maxHP}</p>
+
         <p>Max CP: {maxCP}</p>
-        {/* </div> */}
+
         <p>Flee Rate: {fleeRate}</p>
 
         <p>
