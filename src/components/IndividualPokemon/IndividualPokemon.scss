@@ -36,7 +36,7 @@
   padding: 1rem;
 }
 .pokemon-card {
-  // background-color: #1e90ff;
+  cursor: pointer;
   background: radial-gradient(
     // 135deg,
       rgb(135, 61, 255) 0%,
@@ -64,14 +64,4 @@
 .pokemon-card-image {
   height: 13rem;
   background: rgba(255, 0, 0, 0.399);
-}
-
-.pokemon-card-detailsbutton {
-  padding: 0.3rem 0.7rem;
-  transform: translateY(-0.4rem);
-  cursor: pointer;
-  &:hover {
-    background: #444;
-    color: white;
-  }
 }

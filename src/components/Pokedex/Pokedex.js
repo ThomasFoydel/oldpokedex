@@ -136,7 +136,7 @@ export default function Pokedex({ pokemonData, pokemonList }) {
           Weight: {weight.minimum} - {weight.maximum}
         </p>
         <p>
-          Weight: {height.minimum} - {height.maximum}
+          Height: {height.minimum} - {height.maximum}
         </p>
 
         {evolutionRequirements && (
