@@ -68,7 +68,7 @@ export default function PokedexContainer({ pokemonList }) {
 
   return (
     <>
-      {fetchedPokemon && (
+      {fetchedPokemon && pokemonList && (
         <Pokedex pokemonData={fetchedPokemon} pokemonList={pokemonList} />
       )}
     </>

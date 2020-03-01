@@ -23,12 +23,14 @@ const PokemonSprite = ({ name, pokemonNumber }) => {
     return (
       <animated.div
         key={key}
-        class='pokemonsprite-animated'
+        className='pokemonsprite-animated'
         style={{
           ...props
         }}
       >
-        <img src={item.url} className='pokemonsprite-sprite' />
+        <a href={`https://pokemon.fandom.com/wiki/${name}`} target='_blank'>
+          <img src={item.url} className='pokemonsprite-sprite' />
+        </a>
       </animated.div>
     );
   });
