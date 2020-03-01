@@ -13,11 +13,11 @@ export default function IndividualPokemon({ pokemon }) {
   const animationProps = useSpring({
     to: {
       transform: hover
-        ? 'scale(1.05) translateY(-2rem) translateX(0rem)'
+        ? 'scale(1.04) translateY(-1.5rem) translateX(0rem)'
         : 'scale(0.87) translateY(0rem) translateX(0rem)',
       boxShadow: hover
-        ? '2rem 2rem 1rem rgba(0, 0, 0, 0.3), -0.8rem -0.8rem .5rem rgba(255, 255, 255, 0.1)'
-        : '0.3rem 0.3rem 1rem rgba(0, 0, 0, 0.3), -0.3rem -0.3rem 0.3rem rgba(255, 255, 255, 0.2)'
+        ? '2rem 2rem 1rem rgba(0, 0, 0, 0.3), -0.8rem -0.8rem 5rem rgba(255, 255, 255, 0.2)'
+        : '0.3rem 0.3rem 1rem rgba(0, 0, 0, 0.3), -0.3rem -0.3rem 2rem rgba(255, 255, 255, 0.2)'
     },
     config: config.wobbly
   });
