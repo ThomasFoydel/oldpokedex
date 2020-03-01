@@ -2,25 +2,37 @@
   z-index: 5;
   height: 7rem;
   background: rgb(16, 16, 16);
-  color: rgb(240, 240, 240);
+  color: rgb(232, 232, 232);
   position: fixed;
   top: 0;
   width: 100vw;
-  text-align: center;
+}
+
+.navbar-left {
+  display: flex;
+}
+
+.navbar-pokeball {
+  width: 5.5rem;
+  height: 5.5rem;
+  margin-left: 1.4rem;
+  margin-top: 0.8rem;
 }
 
 .navbar-item {
   font-size: 4rem;
-  margin-top: 0rem;
-  letter-spacing: 1rem;
-  margin-left: 1rem;
+  margin-top: -0.5rem;
+  letter-spacing: 2rem;
+  margin-left: 2rem;
   cursor: default;
 }
 
 .navbar-portfoliolink {
   position: absolute;
-  right: 2rem;
-  top: 3rem;
+  right: 1.7rem;
+  top: 4.7rem;
+  color: rgb(177, 177, 177);
+  cursor: default;
 
   a {
     color: rgb(186, 30, 30);
