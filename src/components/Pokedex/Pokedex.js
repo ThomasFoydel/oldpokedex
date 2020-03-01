@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from 'react';
 import { useSpring, useTransition, animated } from 'react-spring';
 import PokemonSprite from 'components/Pokedex/PokemonSprite';
-
-import spritesArray from 'imgs/sprites/index';
+import spritesArray from '../../imgs/sprites/index';
+// import spritesArray from 'imgs/sprites/index';
 
 import { CTX } from 'context/Store';
 import './Pokedex.scss';
@@ -75,14 +75,15 @@ export default function Pokedex({ pokemonData, pokemonList }) {
         onClick={() => updateState({ type: 'CLEAR_CURRENT_POKEMON' })}
       ></i>
       <h1 className='pokedex-name'>{name}</h1>
-      {/* <PokemonSprite pokemonNumber={Number(number)} name={name} /> */}
-      <animated.div style={animationProps}>
+      <div className='pokedex-spritebackground' />
+      <PokemonSprite pokemonNumber={Number(number) - 1} name={name} />
+      {/* <animated.div style={animationProps}>
         <img
           alt={`${name} sprite`}
           className='pokedex-sprite'
           src={`/imgs/sprites/${Number(number)}.png`}
         />
-      </animated.div>
+      </animated.div> */}
       <p className='pokedex-classification'>{classification}</p>
       <div className='pokedex-infobox'>
         <div className='pokedex-types'>
@@ -143,18 +144,18 @@ export default function Pokedex({ pokemonData, pokemonList }) {
         <p>Max HP: {maxHP}</p>
         <p>Max CP: {maxCP}</p>
         {/* </div> */}
-        <p>flee rate: {fleeRate}</p>
+        <p>Flee Rate: {fleeRate}</p>
 
         <p>
-          weight: {weight.minimum} - {weight.maximum}
+          Weight: {weight.minimum} - {weight.maximum}
         </p>
         <p>
-          height: {height.minimum} - {height.maximum}
+          Weight: {height.minimum} - {height.maximum}
         </p>
 
         {evolutionRequirements && (
           <p>
-            evolution requirements: {evolutionRequirements.amount}{' '}
+            Evolution Requirements: {evolutionRequirements.amount}{' '}
             {evolutionRequirements.name}
           </p>
         )}
@@ -178,7 +179,7 @@ export default function Pokedex({ pokemonData, pokemonList }) {
               <img
                 alt={`${evolution.name} sprite`}
                 className='pokedex-evolution-sprite'
-                src={`/imgs/sprites/${Number(evolution.number)}.png`}
+                src={spritesArray[Number(evolution.number) - 1]}
               />
             </div>
           ))

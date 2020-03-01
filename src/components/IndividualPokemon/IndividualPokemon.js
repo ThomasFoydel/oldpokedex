@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { CTX } from 'context/Store';
 
 import './IndividualPokemon.scss';
+import spritesArray from '../../imgs/sprites/index';
+
 export default function IndividualPokemon({ pokemon }) {
   const [appState, updateState] = useContext(CTX);
   const { name, number, id } = pokemon;
@@ -12,7 +14,7 @@ export default function IndividualPokemon({ pokemon }) {
       <h1 className='pokemon-card-name'>{name}</h1>
       <img
         className='pokemon-card-image'
-        src={`imgs/sprites/${pokemonIndex}.png`}
+        src={spritesArray[pokemonIndex - 1]}
         alt={`${name} sprite`}
       />
       <br />

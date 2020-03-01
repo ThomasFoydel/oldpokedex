@@ -57,12 +57,12 @@
   cursor: default;
 }
 
-.pokedex-sprite {
+.pokedex-spritebackground {
   height: 21rem;
   margin-left: 50%;
   transform: translateX(-50%);
   background: rgba(28, 73, 255, 0.461);
-  padding: 0 8rem;
+  width: 82%;
 }
 
 .pokedex-classification {
@@ -117,4 +117,14 @@
   margin-top: 3rem;
   margin-right: 3rem;
   font-weight: bold;
+}
+
+.pokemonsprite-sprite {
+  height: 20rem;
+  margin-top: -44rem;
+}
+
+.pokemonsprite-animated {
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
