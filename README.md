@@ -2,13 +2,15 @@
 
 ### A pokedex app built with react, react-spring, apollo-graphql, and the [graphql pokeapi by lucasbento](https://github.com/lucasbento/graphql-pokemon)
 
+[live demo here](https://pokedex-gql.herokuapp.com/)
+
+<img src="/src/imgs/preview/screenshot.jpg" width="100%" >
+
 I built this project because
 
 1. Everyone loves a pokedex app. Everyone.
 2. I wanted to play around with graphql.
 3. I wanted to build fluency with the wonderful react-spring animation library.
-
-<img src="/src/imgs/preview/screenshot.jpg" width="100%" >
 
 Users can select pokemon from a list created by an initial graphql api request. This opens a pokedex with details that are fetched with a second graphql query based on the pokemon selected by the user. The user can then select evolutions of that pokemon if any exist, scroll through the pokemon by number, close the pokedex, or click the pokemon's image to be directed to the pokemon fandom wiki page for that pokemon.
 
