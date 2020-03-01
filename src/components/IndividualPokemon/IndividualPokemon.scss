@@ -37,11 +37,11 @@
 }
 .pokemon-card {
   // background-color: #1e90ff;
-  background: linear-gradient(
-    135deg,
-    rgb(71, 169, 255) 0%,
-    rgba(33, 134, 255, 1) 48%,
-    rgb(130, 68, 255) 100%
+  background: radial-gradient(
+    // 135deg,
+      rgb(135, 61, 255) 0%,
+    rgb(33, 134, 255) 50%,
+    rgb(70, 169, 255) 100%
   );
   border: 2px solid rgb(7, 67, 128);
   color: white;

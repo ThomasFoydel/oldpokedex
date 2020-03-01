@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import { useSpring, useTransition, animated } from 'react-spring';
 import PokemonSprite from 'components/Pokedex/PokemonSprite';
 
-import * as imgs from 'imgs/sprites';
+import spritesArray from 'imgs/sprites/index';
 
 import { CTX } from 'context/Store';
 import './Pokedex.scss';
@@ -36,7 +36,6 @@ export default function Pokedex({ pokemonData, pokemonList }) {
     from: { opacity: 0 }
   });
 
-  console.log('imgs: ', imgs);
   return (
     <div className='pokedex'>
       <div className='pokedex-prevnext-buttons'>
@@ -52,7 +51,7 @@ export default function Pokedex({ pokemonData, pokemonList }) {
               })
             }
           >
-            prev
+            <i className='fas fa-2x fa-arrow-left'></i>
           </button>
         )}
         {nextPokemon && (
@@ -67,7 +66,7 @@ export default function Pokedex({ pokemonData, pokemonList }) {
               })
             }
           >
-            next
+            <i className='fas fa-2x fa-arrow-right'></i>
           </button>
         )}
       </div>
@@ -141,8 +140,8 @@ export default function Pokedex({ pokemonData, pokemonList }) {
         </div>
 
         {/* <div className='flex'> */}
-        <p>max HP: {maxHP}</p>
-        <p>max CP: {maxCP}</p>
+        <p>Max HP: {maxHP}</p>
+        <p>Max CP: {maxCP}</p>
         {/* </div> */}
         <p>flee rate: {fleeRate}</p>
 
@@ -184,7 +183,7 @@ export default function Pokedex({ pokemonData, pokemonList }) {
             </div>
           ))
         ) : (
-          <p>No further evolutions</p>
+          <p className='pokedex-finalevolution'>Final Evolution</p>
         )}
       </div>
     </div>
