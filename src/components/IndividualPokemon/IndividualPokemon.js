@@ -11,35 +11,45 @@ export default function IndividualPokemon({ pokemon }) {
   const pokemonIndex = Number(number);
 
   const animationProps = useSpring({
-    to: { transform: hover ? 'scale(1.08)' : 'scale(0.83)' },
+    to: {
+      transform: hover
+        ? 'scale(1.05) translateY(-2rem) translateX(0rem)'
+        : 'scale(0.87) translateY(0rem) translateX(0rem)',
+      boxShadow: hover
+        ? '2rem 2rem 1rem rgba(0, 0, 0, 0.3), -0.8rem -0.8rem .5rem rgba(255, 255, 255, 0.1)'
+        : '0.3rem 0.3rem 1rem rgba(0, 0, 0, 0.3), -0.3rem -0.3rem 0.3rem rgba(255, 255, 255, 0.2)'
+    },
     config: config.wobbly
   });
 
   return (
     <div
-      className='pokemon-card'
+      style={{ width: '100%', zIndex: hover ? 20 : 1 }}
       onMouseOver={() => setHover(true)}
       onMouseOut={() => setHover(false)}
-      onClick={() =>
-        updateState({
-          type: 'CHANGE_CURRENT_POKEMON',
-          payload: {
-            currentPokemonLongId: id
-          }
-        })
-      }
     >
-      <h1
-        className='pokemon-card-name'
-        style={{
-          transition: 'all 0.3s ease',
-          letterSpacing: hover ? '0.7rem' : '0.3rem'
-        }}
+      <animated.div
+        style={animationProps}
+        className='pokemon-card'
+        onClick={() =>
+          updateState({
+            type: 'CHANGE_CURRENT_POKEMON',
+            payload: {
+              currentPokemonLongId: id
+            }
+          })
+        }
       >
-        {name}
-      </h1>
+        <h1
+          className='pokemon-card-name'
+          style={{
+            transition: 'all 0.3s ease',
+            letterSpacing: hover ? '0.7rem' : '0.3rem'
+          }}
+        >
+          {name}
+        </h1>
 
-      <animated.div style={animationProps}>
         <img
           className='pokemon-card-image'
           src={spritesArray[pokemonIndex - 1]}

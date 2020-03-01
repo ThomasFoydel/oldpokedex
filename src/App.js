@@ -53,12 +53,10 @@ function App() {
       {loaded ? (
         <>
           <Navbar />
-          {/* {appState.currentPokemonLongId && ( */}
+          {pokemonList && <PokemonList pokemonList={pokemonList} />}
           <animated.div style={animationProps}>
             <PokedexContainer pokemonList={pokemonList} />
           </animated.div>
-          {/* )} */}
-          {pokemonList && <PokemonList pokemonList={pokemonList} />}
         </>
       ) : (
         <img className='pokeball-loader' src={'imgs/loading/pokeball.gif'} />
