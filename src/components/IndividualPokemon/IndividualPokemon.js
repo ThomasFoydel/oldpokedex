@@ -11,12 +11,8 @@ export default function IndividualPokemon({ pokemon }) {
   const pokemonIndex = Number(number);
 
   const animationProps = useSpring({
-    to: { transform: hover ? 'scale(1.1)' : 'scale(0.85)' },
+    to: { transform: hover ? 'scale(1.08)' : 'scale(0.83)' },
     config: config.wobbly
-  });
-
-  const animationProps2 = useSpring({
-    to: { letterSpacing: hover ? '0.3rem' : '0rem' }
   });
 
   return (

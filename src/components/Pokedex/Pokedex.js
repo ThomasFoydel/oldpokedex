@@ -32,36 +32,39 @@ export default function Pokedex({ pokemonData, pokemonList }) {
   return (
     <div className='pokedex'>
       <div className='pokedex-prevnext-buttons'>
-        {prevPokemon && (
-          <button
-            className='pokedex-prevnext-button'
-            onClick={() =>
+        <button
+          className={`pokedex-prevnext-button ${!prevPokemon &&
+            'inactivebutton'}`}
+          onClick={() => {
+            if (prevPokemon) {
               updateState({
                 type: 'CHANGE_CURRENT_POKEMON',
                 payload: {
                   currentPokemonLongId: prevPokemon
                 }
-              })
+              });
             }
-          >
-            <i className='fas fa-2x fa-arrow-left'></i>
-          </button>
-        )}
-        {nextPokemon && (
-          <button
-            className='pokedex-prevnext-button'
-            onClick={() =>
+          }}
+        >
+          <i className='fas fa-2x fa-arrow-left'></i>
+        </button>
+
+        <button
+          className={`pokedex-prevnext-button ${!nextPokemon &&
+            'inactivebutton'}`}
+          onClick={() => {
+            if (nextPokemon) {
               updateState({
                 type: 'CHANGE_CURRENT_POKEMON',
                 payload: {
                   currentPokemonLongId: nextPokemon
                 }
-              })
+              });
             }
-          >
-            <i className='fas fa-2x fa-arrow-right'></i>
-          </button>
-        )}
+          }}
+        >
+          <i className='fas fa-2x fa-arrow-right'></i>
+        </button>
       </div>
       <i
         className='fas fa-2x fa-times pokedex-close-button'

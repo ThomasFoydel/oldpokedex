@@ -37,13 +37,27 @@
   }
 }
 
+.inactivebutton {
+  background: rgb(147, 147, 147);
+  color: rgb(101, 101, 101);
+  cursor: default;
+  &:hover {
+    background: rgb(147, 147, 147);
+    color: rgb(101, 101, 101);
+  }
+  &:active {
+    background: rgb(147, 147, 147);
+    color: rgb(101, 101, 101);
+  }
+}
+
 .pokedex-close-button {
   position: absolute;
   right: 1.6rem;
   top: 1.4rem;
   transform: scale(1.2);
   color: rgb(48, 48, 48);
-  transition: all 0.3s ease;
+  transition: all 0.15s ease;
   cursor: pointer;
   &:hover {
     color: rgba(94, 0, 0, 0.646);
