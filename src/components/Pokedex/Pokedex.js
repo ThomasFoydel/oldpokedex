@@ -76,7 +76,7 @@ export default function Pokedex({ pokemonData, pokemonList }) {
       <p className='pokedex-classification'>{classification}</p>
       <div className='pokedex-infobox'>
         <div className='pokedex-types'>
-          {types.length > 1 ? `Types:` : `Type:`}{' '}
+          <b>{types.length > 1 ? `Types:` : `Type:`} </b>
           {types.map((type, i) => (
             <span key={i}>
               {type}
@@ -87,7 +87,7 @@ export default function Pokedex({ pokemonData, pokemonList }) {
 
         {attacks.fast && (
           <div>
-            Fast Attacks:{' '}
+            <b>Fast Attacks:</b>{' '}
             {attacks.fast.map((attack, i) => (
               <span key={i}>
                 {attack.name}
@@ -99,7 +99,7 @@ export default function Pokedex({ pokemonData, pokemonList }) {
 
         {attacks.special && (
           <div>
-            Special Attacks:{' '}
+            <b>Special Attacks:</b>{' '}
             {attacks.special.map((attack, i) => (
               <span key={i}>
                 {attack.name}
@@ -110,7 +110,7 @@ export default function Pokedex({ pokemonData, pokemonList }) {
         )}
 
         <div>
-          Resistant To:{' '}
+          <b>Resistant To:</b>{' '}
           {resistant.map((individualResistance, i) => (
             <span key={i}>
               {individualResistance}
@@ -120,7 +120,7 @@ export default function Pokedex({ pokemonData, pokemonList }) {
         </div>
 
         <div>
-          Weaknesses:{' '}
+          <b>Weaknesses:</b>{' '}
           {weaknesses.map((weakness, i) => (
             <span key={i}>
               {weakness}
@@ -129,22 +129,28 @@ export default function Pokedex({ pokemonData, pokemonList }) {
           ))}
         </div>
 
-        <p>Max HP: {maxHP}</p>
-
-        <p>Max CP: {maxCP}</p>
-
-        <p>Flee Rate: {fleeRate}</p>
+        <p>
+          <b>Max HP:</b> {maxHP}
+        </p>
 
         <p>
-          Weight: {weight.minimum} - {weight.maximum}
+          <b>Max CP:</b> {maxCP}
+        </p>
+
+        <p>
+          <b>Flee Rate:</b> {fleeRate}
+        </p>
+
+        <p>
+          <b>Weight:</b> {weight.minimum} - {weight.maximum}
         </p>
         <p>
-          Height: {height.minimum} - {height.maximum}
+          <b>Height:</b> {height.minimum} - {height.maximum}
         </p>
 
         {evolutionRequirements && (
           <p>
-            Evolution Requirements: {evolutionRequirements.amount}{' '}
+            <b>Evolution Requirements:</b> {evolutionRequirements.amount}{' '}
             {evolutionRequirements.name}
           </p>
         )}
